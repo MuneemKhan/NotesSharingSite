@@ -1,0 +1,57 @@
+{% extends 'admin_nav.html' %}
+{% load static %}
+{% block body %}
+
+    <style>
+    .container1{
+        background-color: lightgrey;
+        border-radius: 8px;
+    }
+
+    h2,h4{padding: 10px}
+
+    .mydiv:hover{
+        transform: translateY(-10px);
+    }
+
+    </style>
+    <br><br>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-3 text-center mydiv">
+                <div class="container1">
+                    <h2 class="text-primary">5</h2>
+                    <a href="#"><h4 class="text-dark">Pending notes</h4></a>
+                </div>
+            </div>
+
+            <div class="col-sm-3 text-center mydiv">
+                <div class="container1">
+                    <h2 class="text-primary">5</h2>
+                    <a href="#"><h4 class="text-dark">Accepted notes</h4></a>
+                </div>
+            </div>
+
+            <div class="col-sm-3 text-center mydiv">
+                <div class="container1">
+                    <h2 class="text-primary">5</h2>
+                    <a href="#"><h4 class="text-dark">Rejected notes</h4></a>
+                </div>
+            </div>
+
+            <div class="col-sm-3 text-center mydiv">
+                <div class="container1">
+                    <h2 class="text-primary">5</h2>
+                    <a href="#"><h4 class="text-dark">All notes</h4></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="container mt-5 text-center">
+        <p style="font-size: 30pt; color: black; font-weight: bold">Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | <span style="color: darkslategray">This website is developed by </span><a href="https://www.facebook.com/a.muneem.k" target="_blank">ABDUL MUNEEM KHAN</a></p>
+    </footer>
+
+{% endblock %}

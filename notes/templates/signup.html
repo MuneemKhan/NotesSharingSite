@@ -1,0 +1,59 @@
+{% extends 'navigation.html' %}
+{% load static %}
+{% block body %}
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 class="text-center">Existing user</h2>
+                <hr>
+                <p align="center">Already have an account?</p>
+                <center><a href="{% url 'login' %}" class="btn btn-primary text-white mt-5">Login</a></center>
+            </div>
+            <div class="col-sm-6">
+                <h2 class="text-center">Create an account</h2>
+                <hr>
+                <form method="post">
+                    {% csrf_token %}
+                    <label>First name</label>
+                    <input type="text" class="form-control" placeholder="Enter your first name" name="firstname">
+                    <label>Last name</label>
+                    <input type="text" class="form-control" placeholder="Enter your last name" name="lastname">
+                    <label>Email ID</label>
+                    <input type="email" class="form-control" placeholder="Enter your valid email address" name="emailid">
+                    <label>Contact</label>
+                    <input type="text" class="form-control" placeholder="Enter your contact number" name="contact">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Enter your new password" name="password">
+                    <label>Department</label>
+                    <select class="form-control" name="department">
+                        <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                        <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+                        <option value="Bachelor of Business Administration">Business Administration</option>
+                        <option value="Bachelor of Laws">Laws</option>
+                    </select>
+                    <label>Category</label>
+                    <select class="form-control" name="category">
+                        <option value="Student">Student</option>
+                        <option value="Teacher">Teacher</option>
+                    </select>
+                    <input type="submit" class="btn btn-primary mt-2" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% ifequal error "no" %}
+    <script>
+        alert('Signup successful');
+        window.location=('{% url 'login' %}');
+    </script>
+    {% endifequal %}
+
+    {% ifequal error "yes" %}
+    <script>
+        alert('Invalid signup credentials, Please try again');
+    </script>
+    {% endifequal %}
+
+{% endblock %}
