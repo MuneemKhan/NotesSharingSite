@@ -32,6 +32,7 @@ urlpatterns = [
     path('profile',profile,name='profile'),
     path('edit_profile',edit_profile,name='edit_profile'),
     path('changepassword',changepassword,name='changepassword'),
-    path('upload_notes',upload_notes,name='upload_notes')
+    path('upload_notes',upload_notes,name='upload_notes'),
+    path('view_mynotes',view_mynotes,name='view_mynotes')
 
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

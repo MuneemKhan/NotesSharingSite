@@ -3,10 +3,11 @@
 {% block body %}
 
     <div class="container mt-5">
+            <h2 class="text-center">Upload notes</h2>
+                        <hr>
         <div class="row">
             <div class="col-sm-6">
-                <h2 class="text-center">Upload notes</h2>
-                <hr>
+
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     <label>Department</label>
@@ -38,12 +39,6 @@
                     </textarea>
                     <input type="submit" class="btn btn-primary mt-2" value="Submit">
                 </form>
-            </div>
-            <div class="col-sm-6">
-                <h2 class="text-center">Existing user</h2>
-                <hr>
-                <p align="center">Already have an account?</p>
-                <center><a href="{% url 'login' %}" class="btn btn-primary text-white mt-5">Login</a></center>
             </div>
 
         </div>

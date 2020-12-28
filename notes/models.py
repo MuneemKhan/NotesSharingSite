@@ -14,7 +14,7 @@ class Signup(models.Model):
 
 class Notes(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    uploadDate = models.CharField(max_length=30)
+    uploadingdate = models.CharField(max_length=30)
     department = models.CharField(max_length=30)
     subject = models.CharField(max_length=30)
     notesfile = models.FileField(null=True)

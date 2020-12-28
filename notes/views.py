@@ -142,3 +142,12 @@ def upload_notes(request):
             error="yes"
     d={'error':error}
     return render(request,'upload_notes.html',d)
+
+def view_mynotes(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    user = User.objects.get(id=request.user.id)
+    notes = Notes.objects.get(user=user)
+
+    d = {'notes':notes}
+    return render(request,'view_mynotes.html',d)
